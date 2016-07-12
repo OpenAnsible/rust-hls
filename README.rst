@@ -75,7 +75,7 @@ Rust HTTP Live Stream Library
 
 *   `HTTP Live Streaming <https://developer.apple.com/streaming/>`_ 
 *   `draft-pantos-http-live-streaming <http://tools.ietf.org/html/draft-pantos-http-live-streaming>`_ , HTTP Live Streaming Internet - Draft
-*   `M3U <https://en.wikipedia.org/wiki/M3U>`_
+*   `M3U <https://en.wikipedia.org/wiki/M3U>`_ , A computer file format for a multimedia playlist.
 *   `WebVTT <https://w3c.github.io/webvtt/>`_ , The Web Video Text Tracks Format
 
 *JavaScript HTTP Live Stream Player:*
