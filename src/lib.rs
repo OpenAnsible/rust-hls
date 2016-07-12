@@ -1,3 +1,10 @@
+
+mod segment;
+mod playlist;
+
+
+
+
 #[cfg(test)]
 mod tests {
     #[test]
