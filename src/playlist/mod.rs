@@ -24,7 +24,7 @@ impl Default for Playlist {
 impl ToString for Playlist {
     fn to_string(&self) -> String {
         self.tags.iter().map(|tag: &Tag| -> String {
-            tag.to_string() + "\n"
+            tag.to_string()
         }).collect::<Vec<String>>().join("\n")
     }
 }
