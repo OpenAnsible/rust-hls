@@ -29,10 +29,10 @@ media-b2000000_7.ts?wowzasessionid=2029972411
 
 #[test]
 fn test_parse_master_playlist() {
-	let res = Playlist::from_str(Master_Playlist);
-	assert_eq!(res.is_ok(), true);
-	
-	let playlist = res.unwrap();
+    let res = Playlist::from_str(Master_Playlist);
+    assert_eq!(res.is_ok(), true);
+    
+    let playlist = res.unwrap();
 
-	assert_eq!(Master_Playlist, playlist.to_string());
+    assert_eq!(Master_Playlist, playlist.to_string());
 }
