@@ -62,6 +62,24 @@ Rust HTTP Live Stream Library
 这个模式没什么好讲的，对视频文件进行解码操作，得到 `视频帧`，然后后续操作跟 `直播` 流程一样， 
 只是对 索引文件 的处理方式不太一样。
 
+已支持标签(TAG)
+----------------
+
+*   #EXTM3U
+*   #EXT-X-VERSION
+
+*   #EXT-X-TARGETDURATION
+*   #EXT-X-MEDIA-SEQUENCE
+*   #EXTINF
+*   #EXT-X-BYTERANGE
+
+*   #EXT-X-PLAYLIST-TYPE
+*   #EXT-X-STREAM-INF
+
+*   #EXT-X-ENDLIST
+
+
+其它不常用的标签（TAG）暂未支持，在可预见的将来也不会考虑。
 
 
 用例
