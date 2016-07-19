@@ -1,13 +1,9 @@
 
-mod segment;
+#[allow(dead_code)]
 mod playlist;
+#[allow(dead_code)]
+mod segment;
 
+pub use playlist::{Playlist, Tag};
+pub use segment::Segment;
 
-
-
-#[cfg(test)]
-mod tests {
-    #[test]
-    fn it_works() {
-    }
-}
