@@ -47,7 +47,7 @@ impl Default for Tag {
 impl ToString for Tag {
     fn to_string(&self) -> String {
         match *self {
-            Tag::M3U            => "#EXTM3U".to_string(),
+            Tag::M3U                  => "#EXTM3U".to_string(),
             Tag::VERSION(ref version) => format!("#EXT-X-VERSION:{}", version),
             Tag::INF(ref duration, ref title, ref uri) => match *title {
                 Some(ref title) => {
@@ -70,12 +70,12 @@ impl ToString for Tag {
             Tag::PROGRAM_DATE_TIME  => "#EXT-X-PROGRAM-DATE-TIME".to_string(),
             Tag::DATERANGE          => "#EXT-X-DATERANGE".to_string(),
             Tag::TARGETDURATION(ref duration) => format!("#EXT-X-TARGETDURATION:{}", duration),
-            Tag::MEDIA_SEQUENCE(ref seq) => format!("#EXT-X-MEDIA-SEQUENCE:{}", seq),
-            Tag::DISCONTINUITY_SEQUENCE => "#EXT-X-DISCONTINUITY-SEQUENCE".to_string(),
-            Tag::ENDLIST        => "#EXT-X-ENDLIST".to_string(),
-            Tag::PLAYLIST_TYPE(ref t) => format!("#EXT-X-PLAYLIST-TYPE:{}", t),
-            Tag::I_FRAMES_ONLY  => "#EXT-X-I-FRAMES-ONLY".to_string(),
-            Tag::MEDIA          => "#EXT-X-MEDIA".to_string(),
+            Tag::MEDIA_SEQUENCE(ref seq)      => format!("#EXT-X-MEDIA-SEQUENCE:{}", seq),
+            Tag::DISCONTINUITY_SEQUENCE       => "#EXT-X-DISCONTINUITY-SEQUENCE".to_string(),
+            Tag::ENDLIST                      => "#EXT-X-ENDLIST".to_string(),
+            Tag::PLAYLIST_TYPE(ref t)         => format!("#EXT-X-PLAYLIST-TYPE:{}", t),
+            Tag::I_FRAMES_ONLY                => "#EXT-X-I-FRAMES-ONLY".to_string(),
+            Tag::MEDIA                          => "#EXT-X-MEDIA".to_string(),
             Tag::STREAM_INF(ref attrs, ref uri) => {
                 let mut _attrs: Vec<String> = Vec::new();
                 for (key, value) in attrs {
@@ -98,6 +98,10 @@ impl FromStr for Tag {
     type Err = ();
     fn from_str(s: &str) -> Result<Tag, ()> {
         let s = s.trim();
+        if s.starts_with("EXT") == false {
+            return Err(());
+        }
+
         if s.starts_with("EXTM3U") {
             Ok(Tag::M3U)
         } else if s.starts_with("EXT-X-VERSION") {
@@ -253,5 +257,5 @@ impl FromStr for Tag {
 }
 
 impl Tag {
-    
+
 }

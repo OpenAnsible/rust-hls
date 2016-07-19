@@ -51,13 +51,12 @@ impl FromStr for Playlist {
 }
 
 impl Playlist {
-    #[allow(unused_variables)]
-    pub fn new (duration: usize) -> Playlist {
+    pub fn new () -> Playlist {
         let tags: Vec<Tag> = Vec::new();
         Playlist{tags: tags}
     }
-    pub fn append(&self) -> bool {
-        true
+    pub fn append(&mut self, tag: Tag) {
+        self.tags.push(tag);
     }
     pub fn tags(&self) -> &[Tag] {
         self.tags.as_slice()

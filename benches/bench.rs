@@ -8,6 +8,7 @@ use std::str::FromStr;
 use test::Bencher;
 use hls::{Playlist};
 
+#[allow(non_upper_case_globals)]
 static Master_Playlist: &'static str = r#"#EXTM3U
 #EXT-X-VERSION:3
 #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=300000
@@ -24,6 +25,6 @@ chunklist-b1500000.m3u8"#;
 #[bench]
 fn bench_m3u8_parse(b: &mut Bencher) {
     b.iter(||{
-        Playlist::from_str(Master_Playlist);
+        let _ = Playlist::from_str(Master_Playlist);
     });
 }

@@ -7,7 +7,8 @@ pub enum SegmentType {
 }
 
 #[derive(Debug)]
-pub struct Segment {
+pub struct Segmenter {
 
 }
+
 
